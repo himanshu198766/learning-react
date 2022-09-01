@@ -1,5 +1,13 @@
 # Getting Started with Create React App
 
+```
+    Go to setting
+    go to emmet
+    add extesion path
+
+    add key =javascript and value=javascriptreact
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
