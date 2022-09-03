@@ -1,39 +1,45 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 export default function TextForm(props) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('')
+
   const handleUpClick = () => {
     // console.log('Uppercase was clicked ' + text)
-    let newText = text.toUpperCase();
-    setText(newText);
-  };
+    let newText = text.toUpperCase()
+    setText(newText)
+    props.showAlert('Text converted to uppercase', 'success')
+  }
 
   const handleLoClick = () => {
     // console.log('Uppercase was clicked ' + text)
-    let newText = text.toLowerCase();
-    setText(newText);
-  };
+    let newText = text.toLowerCase()
+    setText(newText)
+    props.showAlert('Text converted to lowercase', 'success')
+  }
 
   const handleClear = () => {
     // console.log('Uppercase was clicked ' + text)
-    let newText = "";
-    setText(newText);
-  };
+    let newText = ''
+    setText(newText)
+    props.showAlert('Text cleared', 'success')
+  }
 
   const handleOnChange = (event) => {
     // console.log('on change')
-    setText(event.target.value);
-  };
+    setText(event.target.value)
+  }
 
   const handleExtraSpace = () => {
-    setText(text.replace(/\s+/g, " "));
-  };
+    setText(text.replace(/\s+/g, ' '))
+
+    props.showAlert('Extra spaces removed', 'success')
+  }
   return (
     <>
       <div
         style={{
-          backgroundColor: props.mode === "light" ? "white" : "#042743",
-          color: props.mode === "light" ? "black" : "white",
+          backgroundColor: props.mode === 'light' ? 'white' : '#042743',
+          color: props.mode === 'light' ? 'black' : 'white',
         }}
       >
         <h1>{props.heading}</h1>
@@ -45,8 +51,8 @@ export default function TextForm(props) {
             rows="8"
             value={text}
             style={{
-              backgroundColor: props.mode === "light" ? "white" : "gray",
-              color: props.mode === "light" ? "black" : "white",
+              backgroundColor: props.mode === 'light' ? 'white' : 'gray',
+              color: props.mode === 'light' ? 'black' : 'white',
             }}
             onChange={handleOnChange}
           ></textarea>
@@ -72,22 +78,22 @@ export default function TextForm(props) {
       <div
         className="container my-3"
         style={{
-          color: props.mode === "light" ? "black" : "white",
+          color: props.mode === 'light' ? 'black' : 'white',
         }}
       >
         <h1>Your Text Summary</h1>
         <p>
-          {text.trim().split(" ").length} words and {text.trim().length}{" "}
+          {text.trim().split(' ').length} words and {text.trim().length}{' '}
           characters
         </p>
 
-        <p>{0.008 * text.trim().split(" ").length} minutes to read</p>
+        <p>{0.008 * text.trim().split(' ').length} minutes to read</p>
 
         <h3>Preview</h3>
         <p>
-          {text.length > 0 ? text : "Enter the text in textbox to preview here"}
+          {text.length > 0 ? text : 'Enter the text in textbox to preview here'}
         </p>
       </div>
     </>
-  );
+  )
 }

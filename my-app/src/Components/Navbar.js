@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react'
+import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
   return (
@@ -43,7 +43,7 @@ export default function Navbar(props) {
             />
             <label
               className={`form-check-label text-${
-                props.mode === "light" ? "dark" : "light"
+                props.mode === 'light' ? 'dark' : 'light'
               }`}
               htmlFor="flexSwitchCheckDefault"
             >
@@ -53,7 +53,7 @@ export default function Navbar(props) {
         </div>
       </div>
     </nav>
-  );
+  )
 }
 
 // ============ Expected Datatypes for props
@@ -65,10 +65,10 @@ Navbar.propTypes = {
 
   title: PropTypes.string.isRequired,
   aboutText: PropTypes.string.isRequired,
-};
+}
 
 // ============= Setting default prop
 Navbar.defaultProps = {
-  title: "set title here",
-  aboutText: "About",
-};
+  title: 'set title here',
+  aboutText: 'About',
+}
